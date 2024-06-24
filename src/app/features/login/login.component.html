@@ -1,0 +1,52 @@
+<div class="login-container">
+  @if(isSignUpSuccess) {
+  <div class="alert alert-success">Registration successful!</div>
+  }
+  <div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="signInForm" (ngSubmit)="onLogin()">
+      <div class="user-box">
+        <input type="text" id="username" formControlName="username" />
+        <label for="text">Username</label>
+        @if(controls.username.invalid && controls.username.dirty) {
+        <div class="message">User name is required!</div>
+        }
+      </div>
+      <div class="user-box">
+        <input type="password" id="password" formControlName="password" />
+        <label for="password">Password</label>
+        @if(controls.password.invalid && controls.password.dirty) {
+        <div class="message">Password is required!</div>
+        }
+      </div>
+      <div class="user-box">
+        <input type="text" id="cookie" formControlName="setCookie" />
+        <label for="cookie">Cookie</label>
+      </div>
+      <button
+        type="submit"
+        [disabled]="signInForm.invalid"
+        class="submit-button"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+
+      <div class="register-link">
+        New here? <a routerLink="/register">Sign Up</a>
+      </div>
+
+      @if(isLoading$ | async) {
+      <div class="loading-container">
+        <div class="loading-content">
+          <div class="spinner"></div>
+          <p>Signing in...</p>
+        </div>
+      </div>
+      }
+    </form>
+  </div>
+</div>

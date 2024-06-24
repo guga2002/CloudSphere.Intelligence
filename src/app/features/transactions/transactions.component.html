@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div class="date-inputs">
+    <select
+      name="grraph type"
+      [(ngModel)]="graphType"
+      (ngModelChange)="onDateChange()"
+    >
+      <option value="line-chart" selected>Line Chart</option>
+      <option value="bar-chart">Bar Chart</option>
+      <option value="scatter-plot">Bar Chart</option>
+      <option value="all">All</option>
+    </select>
+    <input
+      type="date"
+      [(ngModel)]="startDate"
+      (ngModelChange)="onDateChange()"
+    />
+    <input type="date" [(ngModel)]="endDate" (ngModelChange)="onDateChange()" />
+  </div>
+  <div class="graph-container">
+    @if(graphType === 'line-chart' || graphType === 'all') {
+    <app-transaction-quantity
+      [startDate]="startDate"
+      [endDate]="endDate"
+    ></app-transaction-quantity>
+    } @if (graphType === 'bar-chart' || graphType === 'all') {
+    <app-chart-bar [startDate]="startDate" [endDate]="endDate"></app-chart-bar>
+    } @if(graphType === 'scatter-plot' || graphType ==='all') {
+    <app-scatter-plot
+      [startDate]="startDate"
+      [endDate]="endDate"
+    ></app-scatter-plot>
+    }
+  </div>
+</div>

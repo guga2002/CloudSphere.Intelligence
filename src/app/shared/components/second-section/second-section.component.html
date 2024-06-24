@@ -1,0 +1,21 @@
+<div class="main-container">
+  <div class="info-container">
+    <h1>Where the world does markets</h1>
+    <h3>
+      Join 60 million traders and investors taking the future into their own
+      hands.
+    </h3>
+    @if(user$ | async) {
+    <h3>Welcome To RGBA Solution</h3>
+    } @else {
+    <div class="link-container"><a routerLink="/login">Log In</a></div>
+    }
+  </div>
+
+  <div class="img-container">
+    <img
+      src="https://prod-wp.delta.exchange/wp-content/uploads/2020/02/screen-mode-in-trading-view-.gif"
+      alt=""
+    />
+  </div>
+</div>

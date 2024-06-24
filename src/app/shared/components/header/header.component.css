@@ -1,0 +1,13 @@
+header {
+  padding: 16px 62px;
+  background: linear-gradient(rgba(9, 0, 49, 0.6), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(2px);
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}

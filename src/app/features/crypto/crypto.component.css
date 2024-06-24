@@ -1,0 +1,29 @@
+.details-container {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+}
+
+.details-container img {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.details-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.details-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

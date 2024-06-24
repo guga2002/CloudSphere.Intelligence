@@ -1,0 +1,58 @@
+<div class="main-container">
+  @if(user$ | async; as user) {
+  <div class="profile-container">
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+      alt="Profile Image"
+      class="profile-img"
+    />
+    <div class="profile-info">
+      <h3>
+        {{
+          user[
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
+          ]
+        }}
+      </h3>
+      <p>
+        Name:
+        {{ user["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] }}
+      </p>
+      <p>
+        Given Name:
+        {{
+          user[
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"
+          ]
+        }}
+      </p>
+      <p>
+        Date of Birth:
+        {{
+          user[
+            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/dateofbirth"
+          ]
+        }}
+      </p>
+      <p>
+        Serial Number:
+        {{
+          user[
+            "http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber"
+          ]
+        }}
+      </p>
+    </div>
+  </div>
+
+  }
+  <button class="sign-out-button" (click)="signOut.signOut()">Sign Out</button>
+  @if(isSignOut$ | async) {
+  <div class="loading-container">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <p>Signing out...</p>
+    </div>
+  </div>
+  }
+</div>

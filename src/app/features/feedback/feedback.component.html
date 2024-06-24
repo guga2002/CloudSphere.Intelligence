@@ -1,0 +1,59 @@
+<div class="feedback-container">
+  <div class="feedback-box">
+    <h2>Feedback</h2>
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+      <div class="user-box">
+        <input type="text" id="name" formControlName="name" />
+        <label for="name">Your Name</label>
+        @if(controls.name.dirty) { @if (controls.name.errors?.["require"]) {
+        <div class="message">Name is required</div>
+        } }
+      </div>
+      <div class="user-box">
+        <input type="email" id="email" formControlName="email" />
+        <label for="email">Email</label>
+        @if(controls.email.dirty) { @if (controls.email.errors?.["require"]) {
+        <div class="message">Email is required</div>
+        } @if (controls.email.errors) {
+        <div class="message">Must be a valid email</div>
+        } }
+      </div>
+      <div class="user-box">
+        <textarea id="feedback" formControlName="feedback"></textarea>
+        <label for="feedback">Your Feedback</label>
+        @if(controls.feedback.dirty) { @if
+        (controls.feedback.errors?.["require"]) {
+        <div class="message">Feedback is required</div>
+        } }
+      </div>
+      <div class="user-box">
+        <select id="rating" formControlName="ratingGivedByUser">
+          <option value="" disabled selected>Select your rating</option>
+          <option
+            *ngFor="let rating of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+            [value]="rating"
+          >
+            {{ rating }}
+          </option>
+        </select>
+        <label for="rating">Rating (0-10)</label>
+        @if(controls.ratingGivedByUser.dirty) { @if
+        (controls.ratingGivedByUser.errors?.["require"]) {
+        <div class="message">Rating is required</div>
+        } @if
+        (controls.ratingGivedByUser.errors?.['minlength']["requiredLength"] ||
+        controls.ratingGivedByUser.errors?.['maxlength']["requiredLength"]) {
+        <div class="message">Rating must be between 0 and 10</div>
+        } }
+      </div>
+
+      <button type="submit">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
