@@ -3,13 +3,12 @@ import { Injectable, inject } from '@angular/core';
 import { SignInResponse, signIn, signInErrors } from '../types/signIn';
 import { Router } from '@angular/router';
 import { BehaviorSubject, EMPTY, catchError } from 'rxjs';
-import { signUp } from '../types/signUp';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
-  private readonly baseUrl = `http://localhost:5000/api/Customer/SignIn`;
+  private readonly baseUrl = `http://www.cloudsphereapi.com:5000/api/v2.0/Customer/SignIn`;
   private readonly httpClient = inject(HttpClient);
   private readonly route = inject(Router);
 
@@ -50,24 +49,26 @@ export class LoginService {
       .pipe(
         catchError((errorResponse: HttpErrorResponse) => {
           const error = errorResponse.error;
+          window.alert('Your Password is inccorect please try again, with correct password'); 
           console.log(error);
           this.errors$.next({ ...this.errors$.value, signIn: error.error });
+          this.inLoading$.next(false);
           return EMPTY;
         })
       )
       .subscribe((param) => {
         this.inLoading$.next(false);
-        this.token = param.data.authToken;
+        this.token = param.data.token;
         this.refreshToken = param.data.refreshToken;
         this.route.navigate(['/home'], {
           queryParams: {
             signInSuccess: true,
           },
         });
-        const user = this.parseJwt(param.data.authToken);
+        const user = this.parseJwt(param.data.token);
         this.user$.next(user);
         console.log(param);
-        console.log(param.data.authToken, param.data.refreshToken);
+        console.log(param.data.token, param.data.refreshToken);
       });
   }
 
@@ -87,6 +88,7 @@ export class LoginService {
       const decoded = atob(token.split('.')[1]);
       return JSON.parse(decoded);
     } catch {
+      window.alert('Unsuccesfully Sign In')
       return null;
     }
   }

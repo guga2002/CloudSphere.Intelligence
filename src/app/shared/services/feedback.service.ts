@@ -5,7 +5,7 @@ import { Injectable, inject } from '@angular/core';
   providedIn: 'root',
 })
 export class FeedbackService {
-  public Url = `http://localhost:5000/api/FeadBack`;
+  public Url = `http://www.cloudsphereapi.com:5000/api/FeadBack`;
   public http = inject(HttpClient);
 
   postFeedback(data: object) {

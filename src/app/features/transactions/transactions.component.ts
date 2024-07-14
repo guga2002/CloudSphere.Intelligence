@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { TransactionQuantityComponent } from '../../shared/components/transaction-quantity/transaction-quantity.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ScatterPlotComponent } from '../../shared/components/scatter-plot/scatter-plot.component';
+import { HeatTableComponent } from '../../shared/components/heat-table/heat-table.component';
 
 @Component({
   selector: 'app-transactions',
@@ -13,6 +14,7 @@ import { ScatterPlotComponent } from '../../shared/components/scatter-plot/scatt
     TransactionQuantityComponent,
     ScatterPlotComponent,
     FormsModule,
+    HeatTableComponent,
   ],
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.css'],

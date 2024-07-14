@@ -5,7 +5,7 @@ import { Injectable, inject } from '@angular/core';
   providedIn: 'root',
 })
 export class TransactionQuantityService {
-  private baseUrl = `http://localhost:5000/api/Statistic/GetTransactionQuantityWithDateAsync`;
+  private baseUrl = `http://www.cloudsphereapi.com:5000/api/V2.0/Statistic/TransactionQuantityWithDate`;
   private http = inject(HttpClient);
 
   getAllData(data: object) {

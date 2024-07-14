@@ -1,0 +1,63 @@
+<div class="main-container">
+  <div class="popular-chanel">
+    <h1>Popular Chanel</h1>
+    <div class="container">
+      <mat-form-field class="medium-input" appearance="fill">
+        <mat-label>Filter</mat-label>
+        <input
+          matInput
+          (keyup)="applyFilter($event)"
+          placeholder="Ex. Chanel Type"
+          #input
+        />
+      </mat-form-field>
+
+      <div class="mat-elevation-z8 medium-input">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <!-- Chanel Type Column -->
+          <ng-container matColumnDef="channelType">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Channel Type
+            </th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.channelType }}
+            </td>
+          </ng-container>
+
+          <!-- Quantity Column -->
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+            <td mat-cell *matCellDef="let element">{{ element.quantity }}</td>
+          </ng-container>
+
+          <!-- Volume Column -->
+          <ng-container matColumnDef="volume">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Volume</th>
+            <td mat-cell *matCellDef="let element">{{ element.volume }}</td>
+          </ng-container>
+
+          <!-- Average Column -->
+          <ng-container matColumnDef="average">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Average</th>
+            <td mat-cell *matCellDef="let element">{{ element.average }}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">
+              No data matching the filter "{{ input.value }}"
+            </td>
+          </tr>
+        </table>
+
+        <mat-paginator
+          [pageSizeOptions]="[10, 25, 50, 100]"
+          aria-label="Select page of channels"
+        ></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

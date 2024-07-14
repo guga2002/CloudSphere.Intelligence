@@ -1,0 +1,34 @@
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 6rem;
+  color: #fff;
+  text-align: center;
+}
+
+.popular-location h1 {
+  font-size: 2rem;
+}
+
+.medium-input {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+td,
+th {
+  width: 50%;
+}

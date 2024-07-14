@@ -8,6 +8,7 @@
       <option value="line-chart" selected>Line Chart</option>
       <option value="bar-chart">Bar Chart</option>
       <option value="scatter-plot">Bar Chart</option>
+      <option value="heat-teable">Heat Teable</option>
       <option value="all">All</option>
     </select>
     <input
@@ -30,6 +31,11 @@
       [startDate]="startDate"
       [endDate]="endDate"
     ></app-scatter-plot>
+    } @if(graphType === 'heat-teable' || graphType ==='all') {
+    <app-heat-table
+      [startDate]="startDate"
+      [endDate]="endDate"
+    ></app-heat-table>
     }
   </div>
 </div>

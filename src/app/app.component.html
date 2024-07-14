@@ -1,6 +1,6 @@
 <app-header>
   <h3 header-title>
-    <a href="">RGBA Solution</a>
+    <a href="">CloudSphere Intelligence</a>
   </h3>
   <button class="burger-menu" (click)="toggleMenu()">☰</button>
   <nav header-nav [class.open]="menuOpen">
@@ -11,6 +11,11 @@
       <li><a routerLink="/feedback" routerLinkActive="active">Feedback</a></li>
       <li>
         <a routerLink="/transactions" routerLinkActive="active">Transactions</a>
+      </li>
+      <li>
+        <a href="/popular-category" routerLinkActive="active"
+          >Popular-Category</a
+        >
       </li>
       <li>
         <a routerLink="/user-profile" routerLinkActive="active">User Profile</a>
@@ -25,7 +30,7 @@
 @if(signInSuccess) {
 <div class="welcome-container">
   <div class="welcome-content">
-    <p>Welcome To RGBA Solution</p>
+    <p>Welcome To CloudSphere Intelligence</p>
   </div>
 </div>
 }

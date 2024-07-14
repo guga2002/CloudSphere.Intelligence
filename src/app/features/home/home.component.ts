@@ -5,6 +5,7 @@ import { CurrencySectionComponent } from '../../shared/components/currency-secti
 import { CurrentExchangeComponent } from '../../shared/components/current-exchange/current-exchange.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 import { MoreInfoComponent } from '../../shared/components/more-info/more-info.component';
+import { GestureNavigationComponent } from '../../shared/components/gesture-navigation/gesture-navigation.component';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,7 @@ import { MoreInfoComponent } from '../../shared/components/more-info/more-info.c
     CurrentExchangeComponent,
     FooterComponent,
     MoreInfoComponent,
+    GestureNavigationComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

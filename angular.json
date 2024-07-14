@@ -61,7 +61,8 @@
               "buildTarget": "Project:build:production"
             },
             "development": {
-              "buildTarget": "Project:build:development"
+              "buildTarget": "Project:build:development",
+              "publicHost": "www.CloudSphare.com:4200"
             }
           },
           "defaultConfiguration": "development"
@@ -92,5 +93,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

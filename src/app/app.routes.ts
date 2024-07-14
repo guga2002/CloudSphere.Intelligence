@@ -12,6 +12,7 @@ import { BlockchainComponent } from './features/blockchain/blockchain.component'
 import { TradingComponent } from './features/trading/trading.component';
 import { NewsComponent } from './features/news/news.component';
 import { TransactionsComponent } from './features/transactions/transactions.component';
+import { PopularCategoryComponent } from './features/popular-category/popular-category.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,5 +28,6 @@ export const routes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'user-profile', component: UserProfileComponent },
   { path: 'transactions', component: TransactionsComponent },
+  { path: 'popular-category', component: PopularCategoryComponent },
   { path: '**', component: NotFoundPageComponent },
 ];

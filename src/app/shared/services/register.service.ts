@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class RegisterService {
-  private readonly baseUrl = `http://localhost:5000/api/Customer/Registration`;
+  private readonly baseUrl = `http://www.cloudsphereapi.com:5000/api/V2.0/Customer/Registration`;
   private readonly httpClient = inject(HttpClient);
   private readonly route = inject(Router);
 

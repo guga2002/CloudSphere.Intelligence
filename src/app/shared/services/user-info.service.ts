@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UserInfoService {
-  private Url = `http://localhost:5000/api/Customer/Info`;
+  private Url = `http://www.cloudsphereapi.com:5000/api/Customer/Info`;
   private http = inject(HttpClient);
 
   getUserData(): Observable<any> {

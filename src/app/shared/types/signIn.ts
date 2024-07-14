@@ -13,7 +13,7 @@ export interface SignInResponse {
 }
 
 interface data {
-  authToken: string;
+  token: string;
   refreshToken: string;
   validateTill: string;
 }

@@ -1,0 +1,28 @@
+.main-container {
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 6rem;
+  color: #fff;
+  text-align: center;
+}
+
+.popular-category h1 {
+  font-size: 2rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Optional: collapse table borders */
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+  margin: 1rem auto; /* Center the form field with margin */
+}
+
+td,
+th {
+  width: 25%; /* Adjust column width as per your design */
+  padding: 1rem; /* Optional: add padding for better spacing */
+}
