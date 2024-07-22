@@ -1,27 +1,91 @@
-# Project
+# CloudSphere Intelligence
+CloudSphere Intelligence is a powerful solution designed for transaction monitoring to identify and analyze suspicious transactions within cloud environments. This project leverages advanced artificial intelligence and machine learning techniques to provide robust and efficient monitoring capabilities.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+# Features
+- Real-time Transaction Monitoring: Continuously monitor transactions in real-time to detect suspicious activities.
+- AI-powered Analysis: Utilize machine learning algorithms to analyze transaction patterns and flag anomalies.
+- Customizable Alerts: Set up customizable alert thresholds to receive notifications for potential security threats.
+- Detailed Reporting: Generate detailed reports on transaction activities and flagged incidents.
+- User-friendly Dashboard: Access an intuitive dashboard for a comprehensive view of transaction monitoring data.
+  
+# Getting Started
+Prerequisites
+- .NET 8.0
+- SQL Server
+- Entity Framework Core
+- Installation
 
-## Development server
+Clone the repository:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```sh
+git clone https://github.com/guga2002/CloudSphere.Intelligence.git
+````
+Navigate to the project directory:
 
-## Code scaffolding
+```sh
+cd CloudSphere.Intelligence
+```
+Restore the dependencies:
+```sh
+dotnet restore
+```
+Update the database:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+dotnet ef database update
+```
+Build the project:
+```sh
+dotnet build
+```
+Run the project:
+```sh
+dotnet run
+```
+Configuration
+Configure the connection string in appsettings.json to match your SQL Server instance:
 
-## Build
+```sh
+"ConnectionStrings": {
+  "DefaultConnection": "Server=your_server;Database=your_database;User Id=your_user;Password=your_password;"
+}
+````
+Usage
+Access the CloudSphere Intelligence dashboard at http://localhost:5000 after running the project. Use the dashboard to monitor transactions, view reports, and manage alerts.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Project Structure
 
-## Running unit tests
+```sh
+/Controllers: Contains the API controllers.
+/Models: Defines the data models.
+/Repositories: Contains repository classes for data access.
+/Services: Contains business logic and service classes.
+/Views: Contains the Razor views for the web application.
+/wwwroot: Contains static files such as CSS and JavaScript.
+```
+# Contributing
+We welcome contributions to the CloudSphere Intelligence project. To contribute:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Fork the repository.
+Create a feature branch:
 
-## Running end-to-end tests
+```sh
+git checkout -b feature/your-feature
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Commit your changes:
+```sh
+git commit -m 'Add some feature'
+```
+Push to the branch:
 
-## Further help
+```sh
+git push origin feature/your-feature
+```
+Create a new Pull Request.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+# Contact
+For questions or support, please contact Guga2002.
